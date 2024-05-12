@@ -17,8 +17,7 @@ var ndwiCollection = s2.map(calNDWI)
 print(ndwiCollection)
 /*var ndvi = s2.normalizedDifference(["SR_B5","SR_B4"]).rename("NDVI")
 print("NDVI", ndvi)*/
-var nd = ndwiCollection.size();
-var ndwi2 = ee.Image(ndwiCollection.toList(nd).get(1))
+var ndwi2 = ndwiCollection.median()
 var vizParam = {
   min: -1,
   max: 1,
